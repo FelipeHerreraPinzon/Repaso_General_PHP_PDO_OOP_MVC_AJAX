@@ -15,7 +15,7 @@ class Operaciones{
     public function getSuma(){
         $this->resultado = $this->cantidadUno + $this->cantidadDos;
         return $this->resultado;
-    }
+    } 
     
     public function getResta(){
         $this->resultado = $this->cantidadUno - $this->cantidadDos;

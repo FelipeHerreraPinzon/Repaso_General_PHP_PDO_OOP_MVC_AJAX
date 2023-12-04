@@ -2,7 +2,7 @@
 
    class UsuarioClass{
 
-    private $strNombre;
+    private $strNombre; 
     private $strEmail;
     private $strTipo;
     private $strClave;
@@ -41,8 +41,10 @@
 
     public function setCambiarClave($pass)
     {
-        $this->srtClave = $pass;
+        $this->strClave = $pass;
     }
+
+
 
    }
 
