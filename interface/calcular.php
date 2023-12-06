@@ -12,6 +12,4 @@ echo "<br>";
 echo $objetoCalcular->op_basicas(4, 3, "+");
 
 
-
-
 ?>
