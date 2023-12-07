@@ -15,5 +15,21 @@ $objetoUsuario = new Usuario();
    print_r($users);
    print_r('</pre>');
 
+////    update user   
+    $updateUser = $objetoUsuario->updateUser(2, "edit 3", 8615, "emaileditfgaoo@mail.co");
+    echo $updateUser;
+
+
+    //// get user con id
+    $user = $objetoUsuario->getUser(3);
+    print_r('<pre>');
+    print_r($user);
+    print_r('</pre>');
+
+
+  ////  delete user con id
+
+     $delete = $objetoUsuario->deleteUser(3);
+     echo $delete;
 
 ?>

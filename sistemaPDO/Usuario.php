@@ -40,13 +40,44 @@ class Usuario extends Conexion
         return $request;
      }
 
+     public function updateUser(int $id, string $nombre, int $telefono, string $email)
+     {
+        $this->strNombre = $nombre;
+        $this->intTelefono = $telefono;
+        $this->strEmail = $email;
+        $sql = "UPDATE usuario SET nombre=?, telefono=?, email=? WHERE id=$id";
+        $update = $this->conexion->prepare($sql);
+        $arrayData = array($this->strNombre, $this->intTelefono, $this->strEmail);
+        $resExcecute = $update->execute($arrayData);
+        return $resExcecute;
+     }
+
+
+     public function getUser(int $id)
+     {
+        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $arrayWhere = array($id);
+        $query = $this->conexion->prepare($sql);
+        $query->execute($arrayWhere);
+        $request = $query->fetch(PDO::FETCH_ASSOC);
+        return $request;
+     }
+
+
+     public function deleteUser(int $id)
+     {
+        $sql = "DELETE FROM usuario WHERE id = ?";
+        $arrayWhere = array($id);
+        $delete = $this->conexion->prepare($sql);
+        $delete = $delete->execute($arrayWhere);
+        return $delete;
+     }
 
 
 
 
 
 
-     
 
 }
 
